@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 {
   for(int i=0; i<argc; i++)
     printf("%s\n", argv[i]);
-  printf("hello world and welcome");
+  printf("Good morning Nightcity\n");
   
   return EXIT_SUCCESS;
 } 

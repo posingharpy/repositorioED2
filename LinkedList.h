@@ -12,23 +12,26 @@ typedef struct LinckedList
 {
     Node *first;
     int size;
-}LinckedList;
+}LinkedList;
 
 typedef bool (*compare)(void*,void*);
 
-void init(LinckedList *list);
-int enqueue(LinckedList *list, void *data);
-void* dequeue(LinckedList *list);
-void* first(LinckedList *list);
-void* last(LinckedList *list);
-int push(LinckedList *list, void *data);
-void* pop(LinckedList *list);
-void* top(LinckedList *list);
-bool isEmpty(LinckedList *list);
-int indexOF(LinckedList *list, void *data, compare equal);
-void* getPos(LinckedList *list, int pos);
-Node* getNodeByPos(LinckedList *list, int pos);
-int add(LinckedList *list, int pos, void *data);
-int addAll(LinckedList *listDest, int pos, LinckedList *listSource);
-void* removePos(LinckedList *list, int pos);
-bool removeData(LinckedList *list, void *data, compare equal);
+void init(LinkedList *list);
+int enqueue(LinkedList *list, void *data);
+void* dequeue(LinkedList *list);
+void* first(LinkedList *list);
+void* last(LinkedList *list);
+int push(LinkedList *list, void *data);
+void* pop(LinkedList *list);
+void* top(LinkedList *list);
+bool isEmpty(LinkedList *list);
+int indexOf(LinkedList *list, void *data, compare equal);
+void* getPos(LinkedList *list, int pos);
+Node* getNodeByPos(LinkedList *list, int pos);
+int add(LinkedList *list, int pos, void *data);
+int addAll(LinkedList *listDest, int pos, LinkedList *listSource);
+void* removePos(LinkedList *list, int pos);
+bool removeData(LinkedList *list, void *data, compare equal);
+bool dequeueall(LinkedList *list);
+
+#endif

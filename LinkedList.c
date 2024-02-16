@@ -8,7 +8,7 @@ void init(LinkedList *list)
     list->size=0;
 }
 
-boll isEmpty(LinkedList *list)
+bool isEmpty(LinkedList *list)
 {
     return (list->size == 0);
 }
@@ -20,7 +20,7 @@ int enqueue(LinkedList *list, void *data)
     newNode->data = data;
     newNode->next = NULL;
     if(isEmpty(list))
-        list-> = newNode;
+        list->first= newNode;
     else
     {
         Node *aux = list->first;
@@ -59,6 +59,19 @@ void* dequeue(LinkedList *list)
     free(trash);
     list->size--;
     return data;
+}
+
+bool dequeueall(LinkedList *list)
+{
+    while(!isEmpty(list)){
+    Node *trash = list->first;
+    list->first = list->first->next;
+    void *data = trash->data;
+    free(trash);
+    free(data);
+    list->size--;
+    }
+    return true;
 }
 
 void* pop(LinkedList *list) 
