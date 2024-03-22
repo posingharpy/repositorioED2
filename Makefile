@@ -1,4 +1,4 @@
-all: clear ola ponteiro lista listadupla listageral
+all: clear ola ponteiro lista listadupla listageral hash
 
 ola:
 	@echo "compilando programa ola" 
@@ -40,6 +40,14 @@ listageral:
 	@echo "executando programa lista generalizada"
 	@./listageral
 
+hash:
+	@echo "compilando programa tabela hash" 
+	@gcc DoublyLinkedList.c DoublyLinkedList.h hash.h hash.c hashTest.c -o hash
+	@echo "tornando programa executavel"
+	@chmod +x hash
+	@echo "executando programa tabela hash"
+	@./hash
+
 clear:
 	@echo "removendo programa ola"
 	@rm -f ola > /dev/null 2>&1
@@ -47,6 +55,7 @@ clear:
 	@rm -f lista > /dev/null 2>&1
 	@rm -f listadupla > /dev/null 2>&1
 	@rm -f listageral > /dev/null 2>&1
+	@rm -f hash > /dev/null 2>&1
 
 help:
 	@echo "ola= copila e executa o programa ola"
